@@ -16,15 +16,17 @@ export const searchMovies = search => async (dispatch, getState) => {
             movies: [],
          },
       });
-      const response = await axios(
+      const response = await fetch(
          `http://www.omdbapi.com/?s=${search}&apikey=${KEY}&page=1`
       );
+      const dataResponse = await response.json();
+      console.log(dataResponse);
       dispatch({
          type: SEARCH,
          payload: {
             search: search,
-            totalRes: response.data.totalResults,
-            movies: response.data.Search,
+            totalRes: dataResponse.totalResults,
+            movies: dataResponse.Search,
          },
       });
    } catch (error) {
@@ -37,13 +39,14 @@ export const prev = () => async (dispatch, getState) => {
       dispatch({ type: PREVPAGE });
       const current = getState().curPage;
       const search = getState().search;
-      const response = await axios(
+      const response = await fetch(
          `http://www.omdbapi.com/?s=${search}&apikey=${KEY}&page=${current}`
       );
+      const dataResponse = await response.json();
       dispatch({
          type: NEWPAGE,
          payload: {
-            movies: response.data.Search,
+            movies: dataResponse.Search,
          },
       });
    } catch (error) {
@@ -56,13 +59,14 @@ export const next = () => async (dispatch, getState) => {
       dispatch({ type: NEXTPAGE });
       const current = getState().curPage;
       const search = getState().search;
-      const response = await axios(
+      const response = await fetch(
          `http://www.omdbapi.com/?s=${search}&apikey=${KEY}&page=${current}`
       );
+      const dataResponse = await response.json();
       dispatch({
          type: NEWPAGE,
          payload: {
-            movies: response.data.Search,
+            movies: dataResponse.Search,
          },
       });
    } catch (error) {

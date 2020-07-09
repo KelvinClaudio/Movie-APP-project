@@ -13,10 +13,12 @@ function MovieDetails({ match }) {
    }, []);
 
    const fetchData = async () => {
-      const response = await axios(
+      const response = await fetch(
          `http://www.omdbapi.com/?i=${match.params.id}&apikey=${KEY}`
       );
-      setData(response.data);
+      const dataResponse = await response.json();
+
+      setData(dataResponse);
    };
 
    return (
