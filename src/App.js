@@ -12,6 +12,7 @@ import Store from "./redux/store";
 // Redux
 // Route r
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Footer from "./components/Footer";
 // Router
 export class App extends Component {
    render() {
@@ -33,6 +34,7 @@ export class App extends Component {
                      component={MovieDetails}
                   />
                </Switch>
+               <Footer />
             </Router>
          </Provider>
       );

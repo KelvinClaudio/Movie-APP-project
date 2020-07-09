@@ -355,3 +355,19 @@ html {
 .movieWrapper .card .ratings span {
    color: tomato;
 }
+
+/* footer */
+
+footer {
+   width: 100%;
+   color: white;
+   position: fixed;
+   z-index: 99;
+   bottom: 0;
+   right: 0;
+   text-align: right;
+}
+
+footer p {
+   margin-right: 20px;
+}
