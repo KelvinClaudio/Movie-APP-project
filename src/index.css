@@ -25,10 +25,14 @@ html {
    padding: 20px;
    justify-content: space-around;
    background-color: transparent;
-   position: absolute;
+   position: fixed;
    z-index: 99;
    color: white;
    transition: 200ms ease-in;
+}
+.nav-container.scrolled {
+   background-color: rgb(46, 45, 45);
+   padding: 0;
 }
 .nav-container h2 {
    padding-top: 15px;

@@ -10,6 +10,21 @@ function Nav() {
       e.target.classList.add("active");
    };
 
+   window.onscroll = function () {
+      scrollFunction();
+   };
+
+   function scrollFunction() {
+      if (
+         document.body.scrollTop > 80 ||
+         document.documentElement.scrollTop > 80
+      ) {
+         document.querySelector(".nav-container").classList.add("scrolled");
+      } else {
+         document.querySelector(".nav-container").classList.remove("scrolled");
+      }
+   }
+
    return (
       <nav className="nav-container">
          <h2>SearchMovie</h2>
