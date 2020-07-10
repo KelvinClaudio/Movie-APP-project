@@ -146,17 +146,17 @@ html {
    opacity: 0.5;
 }
 
-.contact form {
+.contact .form {
    position: relative;
    z-index: 10;
 }
-.contact form label {
+.contact .form label {
    color: white;
 }
 .contact .container {
    width: 800px;
 }
-.contact .container form button {
+.contact .container .form button {
    margin-right: auto;
    width: 100%;
 }
