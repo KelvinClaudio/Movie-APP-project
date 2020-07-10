@@ -2,7 +2,7 @@ import React, { Component } from "react";
 // components
 import Nav from "./components/Nav";
 import Home from "./components/Home";
-import Contact from "./components/Contact";
+import About from "./components/About";
 import SearchDetails from "./components/SearchDetails";
 import MovieDetails from "./components/MovieDetails";
 // components
@@ -22,7 +22,7 @@ export class App extends Component {
                <Nav />
                <Switch>
                   <Route path="/" exact component={Home} />
-                  <Route path="/contact" exact component={Contact} />
+                  <Route path="/about" exact component={About} />
                   <Route
                      path="/searchDetails"
                      exact

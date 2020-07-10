@@ -34,8 +34,8 @@ function Nav() {
                   Home
                </li>
             </Link>
-            <Link to="/contact" className="nav-link" onClick={active}>
-               <li onClick={active}>Contact Us</li>
+            <Link to="/about" className="nav-link" onClick={active}>
+               <li onClick={active}>About Us</li>
             </Link>
          </ul>
       </nav>

@@ -7,8 +7,11 @@ export const NEWPAGE = "NEWPAGE";
 export const LOADING = "LOADING";
 //
 export const KEY = "6ac2333d";
+
+// fungsi ini untuk melakukan pencarian
 export const searchMovies = search => async (dispatch, getState) => {
    try {
+      // reset state
       dispatch({
          type: SEARCH,
          payload: {
@@ -17,6 +20,7 @@ export const searchMovies = search => async (dispatch, getState) => {
             movies: [],
          },
       });
+      // dispatch loading untuk mengetahui apakah sedang loading atau tidak
       dispatch({ type: LOADING, payload: { loading: true } });
       const response = await axios(
          `http://www.omdbapi.com/?s=${search}&apikey=${KEY}&page=1`
@@ -34,7 +38,7 @@ export const searchMovies = search => async (dispatch, getState) => {
       console.log(error);
    }
 };
-
+// untuk pindah halaman
 export const prev = () => async (dispatch, getState) => {
    try {
       dispatch({ type: PREVPAGE });
@@ -53,7 +57,7 @@ export const prev = () => async (dispatch, getState) => {
       console.log(error);
    }
 };
-
+// untuk pindah halaman
 export const next = () => async (dispatch, getState) => {
    try {
       dispatch({ type: NEXTPAGE });
