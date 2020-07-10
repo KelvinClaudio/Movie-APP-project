@@ -1,6 +1,7 @@
 import * as ACTIONS from "./actions";
 
 const initialState = {
+   loading: true,
    search: "",
    totalRes: "",
    curPage: 1,
@@ -30,6 +31,11 @@ const reducer = (state = initialState, action) => {
          return {
             ...state,
             movies: action.payload.movies,
+         };
+      case ACTIONS.LOADING:
+         return {
+            ...state,
+            loading: action.payload.loading,
          };
       default:
          return state;

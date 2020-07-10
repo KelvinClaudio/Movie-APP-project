@@ -264,7 +264,7 @@ html {
 }
 .wrapper::after {
    content: "";
-   width: 100%;
+   width: 100vw;
    height: 130vh;
    background-color: black;
    position: absolute;
@@ -400,7 +400,7 @@ footer p {
 }
 @media only screen and (max-width: 920px) {
    .wrapper {
-      width: 100%;
+      width: 100vw;
    }
    .wrapper .movieWrapper {
       width: 100%;
@@ -431,6 +431,9 @@ footer p {
    .searchDetails .input-group {
       width: 90%;
    }
+   .searchDetails .desc .search {
+      margin-right: 80px;
+   }
 }
 
 @media only screen and (max-width: 600px) {
@@ -452,9 +455,12 @@ footer p {
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      margin: auto;
+      text-align: center;
    }
-   .searchDetails .desc h4 {
-      font-size: 1.3rem;
+   .searchDetails .desc .search {
+      margin: 0;
+      margin-bottom: 10px;
    }
    .containerCard {
       width: 100%;
@@ -470,5 +476,44 @@ footer p {
    }
    .searchDetails .card .middle h4 {
       font-size: 1.2rem;
+   }
+}
+@media only screen and (max-width: 450px) {
+   .searchDetails .containerCard {
+      gap: 20px 5px;
+   }
+}
+
+.iconContainer {
+   padding-top: 50px;
+   width: 100%;
+   height: 100%;
+   margin: auto;
+   text-align: center;
+   display: flex;
+   justify-content: center;
+   padding-bottom: 300px;
+   flex-direction: column;
+   color: white;
+}
+.iconContainer h3 {
+   margin-top: 18px;
+   letter-spacing: 2px;
+}
+.fas {
+   font-size: 100px;
+   transform-box: fill-box;
+   margin: auto;
+   animation-name: example;
+   animation-duration: 1000ms;
+   animation-iteration-count: infinite;
+   color: rgb(255, 244, 244);
+}
+@keyframes example {
+   0% {
+      transform: rotate(0deg);
+   }
+   100% {
+      transform: rotate(360deg);
    }
 }

@@ -4,6 +4,7 @@ export const SEARCH = "SEARCH";
 export const NEXTPAGE = "NEXTPAGE";
 export const PREVPAGE = "PREVPAGE";
 export const NEWPAGE = "NEWPAGE";
+export const LOADING = "LOADING";
 //
 export const KEY = "6ac2333d";
 export const searchMovies = search => async (dispatch, getState) => {
@@ -16,9 +17,11 @@ export const searchMovies = search => async (dispatch, getState) => {
             movies: [],
          },
       });
+      dispatch({ type: LOADING, payload: { loading: true } });
       const response = await axios(
          `http://www.omdbapi.com/?s=${search}&apikey=${KEY}&page=1`
       );
+      if (response) dispatch({ type: LOADING, payload: { loading: false } });
       dispatch({
          type: SEARCH,
          payload: {

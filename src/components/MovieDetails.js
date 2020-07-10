@@ -13,6 +13,7 @@ function MovieDetails({ match }) {
          const response = await axios(
             `http://www.omdbapi.com/?i=${match.params.id}&apikey=${KEY}`
          );
+         console.log(response.data);
          setData(response.data);
       };
       fetchData();
@@ -27,7 +28,7 @@ function MovieDetails({ match }) {
          </div>
          <div className="movieWrapper">
             <div className="imgWrapper">
-               <img src={data.Poster ? data.Poster : noPic} alt="" />
+               <img src={data.Poster !== "N/A" ? data.Poster : noPic} alt="" />
             </div>
             <div className="card">
                <div className="title">

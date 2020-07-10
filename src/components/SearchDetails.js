@@ -9,10 +9,11 @@ const mapStateToProps = state => {
       movies: state.movies,
       search: state.search,
       totalRes: state.totalRes,
+      loading: state.loading,
    };
 };
 
-function SearchDetails({ movies, search, totalRes }) {
+function SearchDetails({ movies, search, totalRes, loading }) {
    return (
       <section className="searchDetails">
          <SearchForm />
@@ -24,13 +25,25 @@ function SearchDetails({ movies, search, totalRes }) {
                <span>{totalRes ? totalRes : "0"}</span> Movies Found
             </h4>
          </div>
-         <div className="containerCard">
-            {totalRes ? (
-               movies.map(movie => <Movie key={movie.imdbID} data={movie} />)
-            ) : (
-               <h4>NOT FOUND :'(</h4>
-            )}
-         </div>
+
+         {totalRes ? (
+            <div className="containerCard">
+               {movies.map(movie => (
+                  <Movie key={movie.imdbID} data={movie} />
+               ))}
+            </div>
+         ) : (
+            <div class="iconContainer">
+               {loading ? (
+                  <React.Fragment>
+                     <i class="fas fa-film"></i>
+                     <h3>Loading ...</h3>
+                  </React.Fragment>
+               ) : (
+                  <h3>Not Found</h3>
+               )}
+            </div>
+         )}
          {totalRes ? <Pagination /> : ""}
       </section>
    );
