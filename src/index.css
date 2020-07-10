@@ -191,11 +191,11 @@ html {
    color: rgb(255, 74, 74);
 }
 .containerCard {
-   width: 100%;
+   width: 1000px;
    margin: auto;
    padding-top: 50px;
    display: grid;
-   grid-template-columns: repeat(4, 200px);
+   grid-template-columns: repeat(auto-fill, 200px);
    justify-content: center;
    gap: 60px;
    row-gap: 40px;
@@ -249,6 +249,10 @@ html {
    display: flex;
    justify-content: center;
 }
+.pag-nav ul li a {
+   padding: 10px 20px;
+   font-size: 20px;
+}
 
 /*  movie detail */
 .wrapper {
@@ -286,6 +290,7 @@ html {
    display: flex;
    justify-content: flex-start;
    align-items: flex-start;
+   transition: 200ms linear;
 }
 .movieWrapper .imgWrapper {
    width: 40%;
@@ -374,4 +379,96 @@ footer {
 
 footer p {
    margin-right: 20px;
+}
+
+/* RESPONSIVE */
+
+@media only screen and (max-width: 1085px) {
+   .jumbotron .container .display-4 {
+      font-size: 6rem;
+   }
+   .jumbotron .container .input-group {
+      width: 80%;
+   }
+   .containerCard {
+      width: 100%;
+      gap: 20px 30px;
+   }
+   .searchDetails .input-group {
+      width: 80%;
+   }
+}
+@media only screen and (max-width: 920px) {
+   .wrapper {
+      width: 100%;
+   }
+   .wrapper .movieWrapper {
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+   }
+   .wrapper .movieWrapper .imgWrapper {
+      width: 100%;
+      margin-bottom: 50px;
+   }
+   .wrapper .movieWrapper .card {
+      width: 97%;
+   }
+   .buttonWrapper button {
+      padding: 10px 30px;
+   }
+}
+@media only screen and (max-width: 770px) {
+   .jumbotron {
+      width: 100%;
+   }
+   .jumbotron .container .display-4 {
+      font-size: 4.7rem;
+   }
+   .jumbotron .container .input-group {
+      width: 95%;
+   }
+   .searchDetails .input-group {
+      width: 90%;
+   }
+}
+
+@media only screen and (max-width: 600px) {
+   .nav-container {
+      display: flex;
+      flex-direction: column;
+   }
+   .nav-container.scrolled h2 {
+      display: none;
+   }
+   .nav-container h2 {
+      margin: auto;
+   }
+   .buttonWrapper {
+      padding-top: 190px;
+   }
+   .searchDetails .desc {
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+   }
+   .searchDetails .desc h4 {
+      font-size: 1.3rem;
+   }
+   .containerCard {
+      width: 100%;
+      grid-template-columns: repeat(auto-fill, 180px);
+      /* gap: 30px 30px; */
+      justify-content: space-evenly;
+   }
+   .pag-nav ul li a {
+      padding: 15px 30px;
+   }
+   .searchDetails .input-group {
+      padding-top: 180px;
+   }
+   .searchDetails .card .middle h4 {
+      font-size: 1.2rem;
+   }
 }

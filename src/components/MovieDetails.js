@@ -9,15 +9,14 @@ function MovieDetails({ match }) {
       "https://static.lyricsbogie.com/wp-content/uploads/2015/05/No-Poster102.jpg";
 
    useEffect(() => {
+      const fetchData = async () => {
+         const response = await axios(
+            `http://www.omdbapi.com/?i=${match.params.id}&apikey=${KEY}`
+         );
+         setData(response.data);
+      };
       fetchData();
-   });
-
-   const fetchData = async () => {
-      const response = await axios(
-         `http://www.omdbapi.com/?i=${match.params.id}&apikey=${KEY}`
-      );
-      setData(response.data);
-   };
+   }, [match.params.id]);
 
    return (
       <div className="wrapper">
