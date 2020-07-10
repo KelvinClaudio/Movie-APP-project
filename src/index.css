@@ -26,7 +26,7 @@ html {
    justify-content: space-around;
    background-color: transparent;
    position: fixed;
-   z-index: 99;
+   z-index: 999;
    color: white;
    transition: 200ms ease-in;
 }
