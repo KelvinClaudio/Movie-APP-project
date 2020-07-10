@@ -13,7 +13,6 @@ function MovieDetails({ match }) {
          const response = await axios(
             `http://www.omdbapi.com/?i=${match.params.id}&apikey=${KEY}`
          );
-         console.log(response.data);
          setData(response.data);
       };
       fetchData();

@@ -33,10 +33,10 @@ function SearchDetails({ movies, search, totalRes, loading }) {
                ))}
             </div>
          ) : (
-            <div class="iconContainer">
+            <div className="iconContainer">
                {loading ? (
                   <React.Fragment>
-                     <i class="fas fa-film"></i>
+                     <i className="fas fa-film"></i>
                      <h3>Loading ...</h3>
                   </React.Fragment>
                ) : (
