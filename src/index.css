@@ -450,6 +450,10 @@ footer p {
    .searchDetails .desc .search {
       margin-right: 80px;
    }
+   .containerCard {
+      width: 100%;
+      grid-template-columns: repeat(auto-fill, 250px);
+   }
 }
 
 @media only screen and (max-width: 600px) {
@@ -480,7 +484,7 @@ footer p {
    }
    .containerCard {
       width: 100%;
-      grid-template-columns: repeat(auto-fill, 180px);
+      grid-template-columns: repeat(auto-fill, 250px);
       /* gap: 30px 30px; */
       justify-content: space-evenly;
    }
@@ -496,7 +500,7 @@ footer p {
 }
 @media only screen and (max-width: 450px) {
    .searchDetails .containerCard {
-      gap: 20px 5px;
+      gap: 10px 5px;
    }
 }
 
